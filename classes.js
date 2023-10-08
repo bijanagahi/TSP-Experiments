@@ -3,19 +3,35 @@ class Graph {
 }
 
 class Node {
-    constructor(x_, y_){
+    constructor(id_, x_, y_){
         this.x = x_;
         this.y = y_;
+        this.id = id_;
+        this.is_selected = false;
+    }
+
+    add_edge(){
+
     }
 
     show(){
         push();
-        strokeWeight(NODE_SIZE);
+        strokeWeight(EDGE_SIZE);
         stroke('purple');
-        point(this.x, this.y);
+        textSize(12)
+        if (this.is_selected){
+            fill('green')
+            textColor('white');
+        }
+        textAlign(CENTER, CENTER)
+        circle(this.x, this.y, NODE_SIZE);
+        text(this.id, this.x, this.y,)
         pop();
     }
 
+    select(){
+
+    }
 }
 
 class Edge{
